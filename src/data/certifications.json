@@ -1,0 +1,43 @@
+{
+  "certifications": [
+    {
+      "name": "IBM Data Science Methodology",
+      "issuer": "IBM",
+      "description": "Covers structured approach to data science projects including CRISP-DM methodology, problem formulation, and analytical workflows."
+    },
+    {
+      "name": "IBM SQL & Relational Databases",
+      "issuer": "IBM",
+      "description": "Advanced SQL querying, relational database design, and data manipulation with industry-standard tools."
+    },
+    {
+      "name": "IBM Python for Data Science",
+      "issuer": "IBM",
+      "description": "Python programming fundamentals for data science including data analysis with Pandas, NumPy, and visualization libraries."
+    },
+    {
+      "name": "JP Morgan Excel Skills Simulation",
+      "issuer": "JP Morgan Chase",
+      "description": "Financial modelling and advanced Excel skills in a real-world investment banking simulation environment."
+    },
+    {
+      "name": "Cloud Computing Essentials",
+      "issuer": "Cloud Academy",
+      "description": "Core cloud computing concepts, service models (IaaS, PaaS, SaaS), and deployment strategies."
+    },
+    {
+      "name": "ISO 31000 Risk Management",
+      "issuer": "International Organization for Standardization",
+      "description": "Risk management framework, principles, and guidelines for enterprise risk assessment and mitigation."
+    }
+  ],
+  "currently_learning": [
+    "Azure Data Engineering",
+    "Databricks Advanced Analytics",
+    "AI Agents & Agentic AI",
+    "LLM Applications & Prompt Engineering",
+    "Advanced Business Analytics",
+    "Decision Intelligence",
+    "MLOps & Model Deployment"
+  ]
+}

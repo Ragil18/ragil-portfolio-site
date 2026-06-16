@@ -1,0 +1,56 @@
+{
+  "skills": {
+    "analytics_and_bi": {
+      "label": "Analytics & BI",
+      "tools": [
+        { "name": "SQL", "proficiency": "Expert", "description": "Advanced querying, optimization, stored procedures, complex joins, window functions. Used daily for ad-hoc analysis and ETL." },
+        { "name": "Power BI", "proficiency": "Expert", "description": "DAX, complex data models, row-level security, custom visuals, real-time dashboards, report subscriptions." },
+        { "name": "Tableau", "proficiency": "Proficient", "description": "Interactive visualizations, calculated fields, dashboard actions, data blending." },
+        { "name": "Excel", "proficiency": "Expert", "description": "Advanced formulas, pivot tables, Power Query, VBA automation, financial modeling." }
+      ]
+    },
+    "programming": {
+      "label": "Programming",
+      "tools": [
+        { "name": "Python", "proficiency": "Proficient", "description": "Data analysis, automation, ETL pipelines, API development, machine learning." },
+        { "name": "FastAPI", "proficiency": "Proficient", "description": "RESTful API development for serving analytics data and AI model outputs." },
+        { "name": "Pandas", "proficiency": "Proficient", "description": "Data manipulation, cleaning, transformation, and analysis at scale." },
+        { "name": "NumPy", "proficiency": "Proficient", "description": "Numerical computing and data processing support for analytics workflows." }
+      ]
+    },
+    "databases": {
+      "label": "Databases",
+      "tools": [
+        { "name": "SQL Server", "proficiency": "Expert", "description": "Database design, query optimization, SSRS, stored procedures, enterprise data management." },
+        { "name": "PostgreSQL", "proficiency": "Proficient", "description": "Relational database management, complex analytics queries, performance tuning." },
+        { "name": "MySQL", "proficiency": "Proficient", "description": "Database operations, query optimization, data modeling." }
+      ]
+    },
+    "ai_and_ml": {
+      "label": "AI & Machine Learning",
+      "tools": [
+        { "name": "YOLO", "proficiency": "Proficient", "description": "Real-time object detection for CCTV analytics project — detected people, vehicles, and anomalies." },
+        { "name": "OpenCV", "proficiency": "Proficient", "description": "Computer vision pipelines for image and video processing in AI-powered surveillance." },
+        { "name": "TensorFlow", "proficiency": "Intermediate", "description": "Deep learning model development and deployment for analytics applications." }
+      ]
+    },
+    "cloud_and_big_data": {
+      "label": "Cloud & Big Data",
+      "tools": [
+        { "name": "Databricks", "proficiency": "Intermediate", "description": "Unified analytics platform for big data processing — currently deepening expertise." },
+        { "name": "Azure", "proficiency": "Intermediate", "description": "Azure Data Services, cloud analytics, data engineering — actively expanding skills." },
+        { "name": "PySpark", "proficiency": "Intermediate", "description": "Distributed data processing for large-scale analytics workloads." }
+      ]
+    }
+  },
+  "business_analyst_capabilities": [
+    "Stakeholder Management — engaging C-suite to frontline teams to align on requirements and outcomes",
+    "Requirement Gathering — structured elicitation through interviews, workshops, and documentation",
+    "Process Mapping — as-is and to-be process documentation using industry frameworks",
+    "Root Cause Analysis — 5-Why, fishbone diagrams, data-driven problem identification",
+    "KPI Design — defining meaningful metrics aligned to business objectives and strategy",
+    "UAT Testing — designing test scripts, managing user acceptance testing cycles",
+    "SOP Documentation — creating clear standard operating procedures for data and analytics workflows",
+    "Process Improvement — identifying inefficiencies and designing optimized workflows"
+  ]
+}

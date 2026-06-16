@@ -1,0 +1,92 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "name": "Executive Sales Performance Dashboard",
+      "category": "Business Intelligence",
+      "tools": ["Power BI", "SQL Server", "DAX", "Python"],
+      "problem": "Executive leadership lacked real-time visibility into sales performance across regions, products, and teams, leading to delayed decisions and missed targets.",
+      "solution": "Built a comprehensive Power BI dashboard with real-time data refresh, drill-through capabilities, and executive-level KPI summaries. Implemented role-level security so each stakeholder sees their relevant data.",
+      "impact": ["Reduced time-to-insight from days to minutes", "Enabled data-driven sales strategy adjustments", "Adopted by C-suite for weekly business reviews"],
+      "kpis": ["Revenue vs Target", "Regional Performance", "Product Mix Analysis", "Sales Rep Leaderboard", "Pipeline Forecast"],
+      "stakeholders": ["CEO", "VP Sales", "Regional Managers"]
+    },
+    {
+      "id": 2,
+      "name": "Customer Experience & NPS Management Platform",
+      "category": "Analytics Platform",
+      "tools": ["Python", "Power BI", "SQL", "FastAPI"],
+      "problem": "Customer satisfaction data was siloed across departments with no unified view of NPS trends, complaint patterns, or service recovery opportunities.",
+      "solution": "Designed a unified analytics platform integrating customer feedback, NPS surveys, and complaint data. Built automated alerting for NPS drops and a case management view for service recovery.",
+      "impact": ["Unified customer satisfaction data into single source of truth", "Enabled proactive service recovery", "Improved customer communication through data-driven insights"],
+      "kpis": ["Net Promoter Score", "Customer Satisfaction Index", "Complaint Resolution Rate", "Service Recovery Rate"],
+      "stakeholders": ["Customer Experience Team", "Operations", "Management"]
+    },
+    {
+      "id": 3,
+      "name": "AI-Powered CCTV Analytics",
+      "category": "AI / Computer Vision",
+      "tools": ["Python", "YOLO", "OpenCV", "TensorFlow", "FastAPI"],
+      "problem": "Manual monitoring of CCTV feeds was resource-intensive and failed to capture critical events in real-time. Security insights were reactive, not proactive.",
+      "solution": "Developed a computer vision pipeline using YOLO object detection and OpenCV to automatically analyze CCTV footage, detect anomalies, count footfall, and generate real-time alerts. Built a FastAPI backend to serve analytics data to a monitoring dashboard.",
+      "impact": ["Automated surveillance monitoring, reducing manual effort by 70%", "Real-time anomaly detection and alerts", "Generated footfall analytics for operational planning"],
+      "kpis": ["Detection Accuracy", "Alert Response Time", "Footfall Count", "Incident Detection Rate"],
+      "stakeholders": ["Facility Management", "Security Team", "Operations"]
+    },
+    {
+      "id": 4,
+      "name": "Digital Marketing & Call Centre Dashboard",
+      "category": "Business Intelligence",
+      "tools": ["Power BI", "SQL", "Python", "Excel"],
+      "problem": "Marketing spend and call centre performance were tracked in separate systems with no correlation analysis — making it impossible to measure campaign-to-conversion efficiency.",
+      "solution": "Built a unified dashboard connecting marketing campaign data with call centre metrics. Enabled attribution analysis showing which campaigns drove the highest quality inbound calls and conversions.",
+      "impact": ["Enabled marketing ROI measurement for the first time", "Identified highest-performing channels", "Reduced wasted marketing spend through data-driven allocation"],
+      "kpis": ["Campaign ROI", "Call Volume by Source", "Conversion Rate", "Cost per Acquisition", "Agent Performance"],
+      "stakeholders": ["Marketing Team", "Call Centre Management", "Finance"]
+    },
+    {
+      "id": 5,
+      "name": "Attendance & Productivity Analytics",
+      "category": "HR Analytics",
+      "tools": ["Python", "SQL", "Power BI", "Pandas"],
+      "problem": "HR had no systematic way to track attendance patterns, identify productivity trends, or forecast staffing needs — leading to operational disruptions and planning gaps.",
+      "solution": "Built an automated analytics system processing attendance data from multiple sources, generating productivity scores, identifying patterns, and providing forecasting for workforce planning.",
+      "impact": ["Enabled data-driven HR decisions", "Identified attendance patterns linked to operational performance", "Supported workforce planning with predictive insights"],
+      "kpis": ["Attendance Rate", "Productivity Index", "Leave Utilization", "Overtime Analysis", "Staffing Forecast Accuracy"],
+      "stakeholders": ["HR Department", "Department Heads", "Operations"]
+    },
+    {
+      "id": 6,
+      "name": "Executive Financial & P&L Analytics Platform",
+      "category": "Financial Analytics",
+      "tools": ["Power BI", "SQL Server", "DAX", "Python", "Excel"],
+      "problem": "Monthly P&L reporting was a manual, time-consuming process with frequent errors. Finance leadership lacked timely visibility into cost centers, revenue streams, and profitability drivers.",
+      "solution": "Developed an automated P&L analytics platform with real-time financial dashboards, cost center breakdowns, variance analysis, and budget vs. actuals tracking. Integrated with ERP data sources.",
+      "impact": ["Reduced monthly close reporting time by 35%", "Provided executive real-time P&L visibility", "Enabled faster financial decision-making"],
+      "kpis": ["Revenue by Business Unit", "Cost Center Performance", "Budget vs Actuals", "Gross Margin", "EBITDA Trend"],
+      "stakeholders": ["CFO", "Finance Team", "Business Unit Heads", "CEO"]
+    },
+    {
+      "id": 7,
+      "name": "Healthcare Operations Intelligence Dashboard",
+      "category": "Healthcare Analytics",
+      "tools": ["Power BI", "SQL", "Python", "Tableau"],
+      "problem": "Neuberg Diagnostics needed visibility into lab operations, turnaround times, sample processing efficiency, and quality metrics across multiple diagnostic centers.",
+      "solution": "Built a comprehensive operational intelligence platform covering lab TAT, sample rejection rates, equipment utilization, and quality KPIs. Enabled benchmarking across centers and identification of improvement opportunities.",
+      "impact": ["Improved lab turnaround time visibility", "Identified quality control improvement areas", "Enabled center-level benchmarking for operational excellence"],
+      "kpis": ["Test Turnaround Time (TAT)", "Sample Rejection Rate", "Equipment Utilization", "Quality Score", "Patient Volume", "Revenue per Test"],
+      "stakeholders": ["Lab Directors", "Operations Management", "Quality Team", "Executive Leadership"]
+    },
+    {
+      "id": 8,
+      "name": "Business Process Automation Suite",
+      "category": "Automation",
+      "tools": ["Python", "FastAPI", "SQL", "Pandas", "Scheduled Jobs"],
+      "problem": "Analysts spent 60-70% of their time on repetitive data collection, formatting, and distribution tasks — leaving little time for actual analysis and insight generation.",
+      "solution": "Built an end-to-end automation suite covering report generation, data collection, email distribution, and dashboard refresh orchestration. Each automation is monitored with error alerts and audit logs.",
+      "impact": ["Automated 80% of recurring reporting tasks", "Saved hundreds of analyst hours monthly", "Improved report accuracy by eliminating manual errors"],
+      "kpis": ["Reports Automated", "Hours Saved per Month", "Error Rate Reduction", "Report Delivery Time"],
+      "stakeholders": ["Analytics Team", "All Business Departments"]
+    }
+  ]
+}

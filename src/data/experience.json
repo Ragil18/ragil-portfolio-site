@@ -1,0 +1,38 @@
+{
+  "experience": [
+    {
+      "company": "Neuberg Diagnostics",
+      "role": "Junior Data Analyst",
+      "period": "December 2024 – April 2026",
+      "type": "Full-time",
+      "description": "Led the development of enterprise-grade BI dashboards, built automation pipelines, and delivered AI-powered analytics solutions across the diagnostics business.",
+      "achievements": [
+        "Delivered 15+ Power BI and Tableau dashboards for executive and operational stakeholders",
+        "Reduced dashboard refresh time by 50% through query optimization and data modeling",
+        "Automated 80% of recurring reports, saving hundreds of analyst hours monthly",
+        "Built AI-powered CCTV analytics solution using YOLO and OpenCV for facility monitoring",
+        "Designed and implemented KPI frameworks aligned with organizational strategic goals",
+        "Led UAT sessions and gathered requirements from C-suite and department heads",
+        "Processed thousands of diagnostic records daily through automated ETL pipelines",
+        "Achieved 35% faster report delivery through process optimization and automation"
+      ],
+      "technologies": ["Python", "Power BI", "SQL", "FastAPI", "Pandas", "NumPy", "TensorFlow", "YOLO", "OpenCV", "PostgreSQL", "SQL Server"]
+    },
+    {
+      "company": "Neuberg Diagnostics",
+      "role": "Data Analyst Intern",
+      "period": "May 2024 – November 2024",
+      "type": "Internship",
+      "description": "Began analytics journey at one of India's leading diagnostics chains — built foundational dashboards, conducted data analysis, and contributed to business intelligence initiatives.",
+      "achievements": [
+        "Built first set of operational dashboards tracking lab throughput and patient volumes",
+        "Conducted root cause analysis on reporting inefficiencies, identifying 25% efficiency improvement opportunities",
+        "Supported requirement gathering sessions with department managers",
+        "Wrote complex SQL queries for ad-hoc analytical requests",
+        "Contributed to SOP documentation for data workflows",
+        "Learned healthcare data standards and diagnostics domain knowledge"
+      ],
+      "technologies": ["SQL", "Excel", "Python", "Power BI", "Tableau"]
+    }
+  ]
+}
