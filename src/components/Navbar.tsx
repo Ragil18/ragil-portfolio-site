@@ -11,7 +11,7 @@ export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
-    const sections = ["hero", "about", "impact", "projects", "skills", "experience", "contact"];
+    const sections = ["hero", "about", "impact", "projects", "skills", "experience", "ai", "contact"];
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
       for (const id of [...sections].reverse()) {

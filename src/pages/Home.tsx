@@ -7,6 +7,7 @@ import { Navbar } from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Terminal, Activity, Code, Database, BrainCircuit, Download, Mail, Linkedin, Check, Copy } from "lucide-react";
 import { ProjectExplorer } from "@/components/ProjectExplorer";
+import { ExperienceTimeline } from "@/components/ExperienceTimeline";
 
 const RESUME_URL = "/resume.pdf";
 const LINKEDIN_URL = "https://www.linkedin.com/in/ragil-immanuvel-p-d-a88533200/";
@@ -226,6 +227,23 @@ export default function Home() {
           <motion.div variants={fadeUp} className="border border-border/50 rounded-2xl overflow-hidden bg-black/50">
             <SkillsOrbit />
           </motion.div>
+        </div>
+      </AnimatedSection>
+
+      {/* EXPERIENCE TIMELINE */}
+      <AnimatedSection id="experience" className="py-24 bg-card/30 border-y border-border/50">
+        <div className="container mx-auto px-6">
+          <motion.div variants={fadeUp} className="mb-12">
+            <h2 className="text-3xl font-bold font-mono tracking-tight mb-4 flex items-center gap-3">
+              <Activity className="text-primary animate-pulse" /> PROFESSIONAL JOURNEY
+            </h2>
+            <div className="w-20 h-1 bg-primary mb-4" />
+            <p className="text-muted-foreground text-sm max-w-xl">
+              Chronological ledger of professional roles, projects executed, and engineering achievements.
+            </p>
+          </motion.div>
+
+          <ExperienceTimeline />
         </div>
       </AnimatedSection>
 
