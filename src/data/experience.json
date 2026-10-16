@@ -1,6 +1,21 @@
 {
   "experience": [
     {
+      "company": "DAC Developers",
+      "role": "Senior AI Automation Engineer",
+      "period": "July 2026 – Present",
+      "type": "Full-time",
+      "description": "Leading enterprise AI automation and intelligent systems engineering — architecting autonomous agent workflows, integrating computer vision, building decision intelligence pipelines, and scaling operations with AI.",
+      "achievements": [
+        "Architecting and deploying autonomous multi-agent workflows and intelligent process automation across enterprise operations",
+        "Developing computer vision and document intelligence solutions to automate high-volume workflows",
+        "Building executive intelligence dashboards and real-time operational monitoring systems",
+        "Standardizing AI engineering pipelines and integrating LLM-based solutions with enterprise platforms",
+        "Collaborating across cross-functional leadership to identify and execute high-ROI AI automation opportunities"
+      ],
+      "technologies": ["Python", "AI Agents", "LLMs", "FastAPI", "OpenCV", "YOLO", "SQL", "Power BI", "Cloud Architecture", "Process Automation"]
+    },
+    {
       "company": "Neuberg Diagnostics",
       "role": "Junior Data Analyst",
       "period": "December 2024 – April 2026",

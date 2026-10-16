@@ -1,17 +1,19 @@
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { Linkedin, Download, Menu, X } from "lucide-react";
+import { useLocation } from "wouter";
 
 const RESUME_URL = "/resume.pdf";
 const LINKEDIN_URL = "https://www.linkedin.com/in/ragil-immanuvel-p-d-a88533200/";
 
 export function Navbar() {
+  const [, setLocation] = useLocation();
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("hero");
   const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
-    const sections = ["hero", "about", "impact", "projects", "skills", "experience", "ai", "contact"];
+    const sections = ["hero", "about", "impact", "projects", "skills", "experience", "contact"];
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
       for (const id of [...sections].reverse()) {
@@ -91,6 +93,12 @@ export function Navbar() {
           >
             <Download className="w-3 h-3" /> Resume
           </a>
+          <button
+            onClick={() => setLocation("/rpg")}
+            className="flex items-center gap-1 px-3 py-1.5 rounded bg-amber-500/15 border border-amber-500/40 font-mono text-xs text-amber-400 hover:bg-amber-500/25 transition-colors"
+          >
+            <span>👾</span> RPG MODE
+          </button>
         </div>
 
         {/* Mobile hamburger */}
@@ -134,6 +142,15 @@ export function Navbar() {
             >
               <Download className="w-3 h-3" /> Resume
             </a>
+            <button
+              onClick={() => {
+                setMobileOpen(false);
+                setLocation("/rpg");
+              }}
+              className="flex items-center gap-1 px-3 py-1.5 rounded bg-amber-500/15 border border-amber-500/40 font-mono text-xs text-amber-400 hover:bg-amber-500/25 transition-colors"
+            >
+              <span>👾</span> RPG MODE
+            </button>
           </div>
         </div>
       )}

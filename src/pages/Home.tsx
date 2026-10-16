@@ -3,11 +3,16 @@ import { motion, useInView, useAnimation } from "framer-motion";
 import { GlobeScene } from "@/components/GlobeScene";
 import { SkillsOrbit } from "@/components/SkillsOrbit";
 import { AiChat } from "@/components/AiChat";
+import { FloatingAiCopilot } from "@/components/FloatingAiCopilot";
 import { Navbar } from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Terminal, Activity, Code, Database, BrainCircuit, Download, Mail, Linkedin, Check, Copy } from "lucide-react";
+import { ArrowRight, Terminal, Activity, Code, Database, BrainCircuit, Download, Mail, Linkedin, Check, Copy, Briefcase, Calendar } from "lucide-react";
 import { ProjectExplorer } from "@/components/ProjectExplorer";
-import { ExperienceTimeline } from "@/components/ExperienceTimeline";
+import { RoleTailoredView } from "@/components/RoleTailoredView";
+import { ArchitectureExplorer } from "@/components/ArchitectureExplorer";
+import { RoiCalculator } from "@/components/RoiCalculator";
+import experienceData from "@/data/experience.json";
+import { getDynamicExperience } from "@/lib/experience";
 
 const RESUME_URL = "/resume.pdf";
 const LINKEDIN_URL = "https://www.linkedin.com/in/ragil-immanuvel-p-d-a88533200/";
@@ -87,6 +92,7 @@ function useMailClick() {
 
 export default function Home() {
   const { copied: emailCopied, handleMailClick } = useMailClick();
+  const expStats = getDynamicExperience();
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-primary/30">
       <Navbar />
@@ -95,37 +101,37 @@ export default function Home() {
       <section id="hero" className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
         <GlobeScene />
         
-        <div className="container relative z-10 px-6 mx-auto">
+        <div className="container relative z-10 px-4 sm:px-6 mx-auto">
           <motion.div 
             initial="hidden" 
             animate="visible" 
             variants={stagger}
             className="max-w-4xl"
           >
-            <motion.div variants={fadeUp} className="flex items-center gap-3 mb-6 text-primary">
-              <Terminal className="w-5 h-5" />
-              <span className="font-mono text-sm tracking-widest">SYSTEM_INITIALIZED // RAGIL.OS</span>
+            <motion.div variants={fadeUp} className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6 text-primary">
+              <Terminal className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" />
+              <span className="font-mono text-xs sm:text-sm tracking-widest truncate">SYSTEM_INITIALIZED // RAGIL.OS</span>
             </motion.div>
             
-            <motion.h1 variants={fadeUp} className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter mb-6 leading-none">
+            <motion.h1 variants={fadeUp} className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight mb-4 sm:mb-6 leading-tight break-words">
               DATA <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary/50">INTELLIGENCE</span><br />
               COMMAND CENTER
             </motion.h1>
             
-            <motion.p variants={fadeUp} className="text-xl md:text-2xl text-muted-foreground mb-10 max-w-2xl font-light">
-              Ragil Immanuvel. Data Analyst · Business Intelligence · Business Analyst · AI Solutions Builder.
+            <motion.p variants={fadeUp} className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-8 sm:mb-10 max-w-2xl font-light">
+              Ragil Immanuvel. Senior AI Automation Engineer · Data Analyst · BI & AI Solutions Builder.
             </motion.p>
             
-            <motion.div variants={fadeUp} className="flex flex-wrap gap-4">
-              <Button size="lg" className="font-mono tracking-wider bg-primary text-primary-foreground hover:bg-primary/90" onClick={() => document.getElementById('projects')?.scrollIntoView({behavior: 'smooth'})}>
+            <motion.div variants={fadeUp} className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
+              <Button size="lg" className="font-mono tracking-wider bg-primary text-primary-foreground hover:bg-primary/90 w-full sm:w-auto justify-center" onClick={() => document.getElementById('projects')?.scrollIntoView({behavior: 'smooth'})}>
                 EXPLORE MY WORK <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
-              <a href={RESUME_URL} download="Ragil_Immanuvel_Resume.pdf">
-                <Button size="lg" variant="outline" className="font-mono tracking-wider border-primary/30 hover:bg-primary/10">
+              <a href={RESUME_URL} download="Ragil_Immanuvel_Resume.pdf" className="w-full sm:w-auto">
+                <Button size="lg" variant="outline" className="font-mono tracking-wider border-primary/30 hover:bg-primary/10 w-full justify-center">
                   <Download className="w-4 h-4 mr-2" /> DOWNLOAD RESUME
                 </Button>
               </a>
-              <Button size="lg" variant="outline" className="font-mono tracking-wider border-primary/20 hover:bg-primary/5 min-w-[160px]" onClick={handleMailClick}>
+              <Button size="lg" variant="outline" className="font-mono tracking-wider border-primary/20 hover:bg-primary/5 w-full sm:w-auto min-w-[160px] justify-center" onClick={handleMailClick}>
                 {emailCopied ? <><Check className="w-4 h-4 mr-2 text-emerald-400" /><span className="text-emerald-400">EMAIL COPIED!</span></> : <><Mail className="w-4 h-4 mr-2" /> CONTACT ME</>}
               </Button>
             </motion.div>
@@ -139,7 +145,7 @@ export default function Home() {
             className="absolute right-6 top-1/4 hidden lg:flex flex-col gap-4"
           >
             {[
-              { label: "Experience", value: "2 Years" },
+              { label: "Experience", value: expStats.yearsBadge },
               { label: "Efficiency", value: "+25%" },
               { label: "Dashboards", value: "15+" }
             ].map((kpi, i) => (
@@ -149,6 +155,13 @@ export default function Home() {
               </div>
             ))}
           </motion.div>
+        </div>
+      </section>
+
+      {/* ROLE TAILORED RECRUITER VIEW */}
+      <section className="py-8 sm:py-12 border-b border-border/40 bg-card/20">
+        <div className="container mx-auto px-4 sm:px-6">
+          <RoleTailoredView />
         </div>
       </section>
 
@@ -169,7 +182,7 @@ export default function Home() {
               { title: "Business Intelligence", desc: "Built 15+ dashboards, translating raw datasets into actionable executive insights." },
               { title: "Automation Focus", desc: "Automated manual reporting, achieving 80% reduction in reporting time and 50% faster refreshes." },
               { title: "AI Solutions", desc: "Pioneered AI implementations including YOLO-based CCTV analytics for attendance and productivity." },
-              { title: "Agentic Future", desc: "Currently exploring LLM applications and Decision Intelligence frameworks to build next-gen tools." }
+              { title: "Senior AI Automation", desc: "Leading enterprise AI at DAC Developers, deploying multi-agent workflows, computer vision, and autonomous systems." }
             ].map((node, i) => (
               <motion.div key={i} variants={fadeUp} className="p-6 border-l-2 border-primary/30 relative pl-8 hover:border-primary transition-colors">
                 <div className="absolute w-3 h-3 bg-primary rounded-full -left-[7px] top-7" />
@@ -230,42 +243,129 @@ export default function Home() {
         </div>
       </AnimatedSection>
 
+      {/* ENTERPRISE PIPELINE ARCHITECTURE */}
+      <AnimatedSection id="architecture" className="py-24 border-t border-border/50">
+        <div className="container mx-auto px-6">
+          <ArchitectureExplorer />
+        </div>
+      </AnimatedSection>
+
       {/* EXPERIENCE TIMELINE */}
       <AnimatedSection id="experience" className="py-24 bg-card/30 border-y border-border/50">
         <div className="container mx-auto px-6">
-          <motion.div variants={fadeUp} className="mb-12">
+          <motion.div variants={fadeUp} className="mb-14">
             <h2 className="text-3xl font-bold font-mono tracking-tight mb-4 flex items-center gap-3">
-              <Activity className="text-primary animate-pulse" /> PROFESSIONAL JOURNEY
+              <Briefcase className="text-primary" /> WORK EXPERIENCE
             </h2>
             <div className="w-20 h-1 bg-primary mb-4" />
-            <p className="text-muted-foreground text-sm max-w-xl">
-              Chronological ledger of professional roles, projects executed, and engineering achievements.
+            <p className="text-muted-foreground text-sm max-w-2xl">
+              Enterprise engineering journey spanning AI automation systems, operational analytics, and business intelligence.
             </p>
           </motion.div>
 
-          <ExperienceTimeline />
+          <div className="relative border-l border-primary/25 ml-3 md:ml-6 space-y-10 pl-6 md:pl-10">
+            {experienceData.experience.map((exp, idx) => {
+              const isCurrent = exp.period.toLowerCase().includes("present");
+              return (
+                <motion.div
+                  key={idx}
+                  variants={fadeUp}
+                  className="relative group"
+                >
+                  {/* Timeline node marker */}
+                  <div
+                    className={`absolute -left-[31px] md:-left-[47px] top-2 w-3.5 h-3.5 rounded-full border-2 transition-transform duration-300 group-hover:scale-125 ${
+                      isCurrent
+                        ? "bg-emerald-400 border-background shadow-[0_0_12px_rgba(52,211,153,0.8)]"
+                        : "bg-primary border-background"
+                    }`}
+                  />
+
+                  <div className="p-6 md:p-8 rounded-2xl border border-primary/20 bg-background/60 backdrop-blur-md hover:border-primary/50 transition-all duration-300 shadow-xl">
+                    <div className="flex flex-wrap items-start justify-between gap-3 mb-4">
+                      <div>
+                        <div className="flex items-center gap-3 flex-wrap">
+                          <h3 className="text-2xl font-bold text-foreground font-mono tracking-tight">{exp.role}</h3>
+                          {isCurrent && (
+                            <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-mono text-[11px] font-semibold tracking-wider">
+                              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                              CURRENT ROLE
+                            </span>
+                          )}
+                        </div>
+                        <div className="text-primary font-mono font-medium text-base mt-1 flex items-center gap-2">
+                          <span>{exp.company}</span>
+                          <span className="text-muted-foreground/50">•</span>
+                          <span className="text-muted-foreground text-xs font-sans tracking-wide">{exp.type}</span>
+                        </div>
+                      </div>
+
+                      <div className="flex items-center gap-2 font-mono text-xs text-muted-foreground px-3 py-1.5 rounded-lg bg-card/60 border border-border/50">
+                        <Calendar className="w-3.5 h-3.5 text-primary" />
+                        <span>{exp.period}</span>
+                      </div>
+                    </div>
+
+                    <p className="text-muted-foreground text-sm leading-relaxed mb-6 font-light">
+                      {exp.description}
+                    </p>
+
+                    <div className="mb-6 space-y-2.5">
+                      <div className="font-mono text-xs text-primary uppercase tracking-wider font-semibold">
+                        Key Impact & Achievements:
+                      </div>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5">
+                        {exp.achievements.map((item, i) => (
+                          <div key={i} className="flex items-start gap-2 text-xs text-foreground/90 leading-normal">
+                            <span className="text-primary font-mono text-xs leading-none mt-1">▸</span>
+                            <span>{item}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="flex flex-wrap gap-2 pt-4 border-t border-border/40">
+                      {exp.technologies.map((tech) => (
+                        <span
+                          key={tech}
+                          className="px-2.5 py-1 text-[11px] font-mono rounded bg-primary/10 border border-primary/20 text-primary hover:border-primary/50 transition-colors"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
         </div>
       </AnimatedSection>
 
       {/* AI CHAT & EXPLORING */}
       <AnimatedSection id="ai" className="py-24 bg-card/30 border-y border-border/50">
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
             
-            <div className="space-y-12">
+            <div className="lg:col-span-7 space-y-8">
               <motion.div variants={fadeUp}>
-                <h2 className="text-3xl font-bold font-mono tracking-tight mb-4 flex items-center gap-3">
-                  <BrainCircuit className="text-primary" /> ASK RAGIL.AI
-                </h2>
-                <div className="w-20 h-1 bg-primary mb-8" />
-                <p className="text-muted-foreground mb-6">
-                  Experience my resume interactively. This terminal is connected to an LLM trained exclusively on my professional background, projects, and methodologies.
+                <div className="flex items-center justify-between mb-4 flex-wrap gap-2">
+                  <h2 className="text-3xl font-bold font-mono tracking-tight flex items-center gap-3">
+                    <BrainCircuit className="text-primary" /> ASK RAGIL.AI
+                  </h2>
+                  <span className="font-mono text-xs text-primary/70 border border-primary/30 px-2.5 py-1 rounded bg-primary/5">
+                    NEURAL COPILOT // 100% OFFLINE
+                  </span>
+                </div>
+                <div className="w-20 h-1 bg-primary mb-6" />
+                <p className="text-muted-foreground mb-6 text-sm">
+                  Experience my background interactively. Switch between <strong className="text-amber-400">Recruiter</strong>, <strong className="text-cyan-400">Tech Lead</strong>, and <strong className="text-emerald-400">Executive</strong> lenses, query multi-agent systems, or summon anytime using <kbd className="px-1.5 py-0.5 rounded bg-muted font-mono text-xs border border-border">Ctrl + K</kbd>.
                 </p>
                 <AiChat />
               </motion.div>
             </div>
 
-            <div className="space-y-12">
+            <div className="lg:col-span-5 space-y-12">
               <motion.div variants={fadeUp}>
                 <h2 className="text-3xl font-bold font-mono tracking-tight mb-4">INNOVATION LAB</h2>
                 <div className="w-20 h-1 bg-primary mb-8" />
@@ -308,6 +408,13 @@ export default function Home() {
             </div>
 
           </div>
+        </div>
+      </AnimatedSection>
+
+      {/* AUTOMATION ROI CALCULATOR */}
+      <AnimatedSection id="roi" className="py-20 bg-card/20 border-t border-border/40">
+        <div className="container mx-auto px-6">
+          <RoiCalculator />
         </div>
       </AnimatedSection>
 
@@ -403,7 +510,7 @@ export default function Home() {
             <div className="text-center md:text-left">
               <div className="font-mono font-bold text-xl text-primary mb-1">RAGIL<span className="text-foreground">.OS</span></div>
               <div className="text-sm text-muted-foreground max-w-xs">
-                Data Analyst · Business Intelligence · Business Analyst · AI Solutions Builder
+                Senior AI Automation Engineer · Data Analyst · BI & AI Solutions Builder
               </div>
             </div>
 
@@ -442,6 +549,9 @@ export default function Home() {
           </div>
         </div>
       </footer>
+
+      {/* Global Floating AI Copilot (Ctrl + K) */}
+      <FloatingAiCopilot />
     </div>
   );
 }
